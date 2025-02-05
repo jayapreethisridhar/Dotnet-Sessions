@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Customer>
+<Id>1</Id>
+<Name>Jayapreethi</Name>
+<Addresses>
+<City>Chennai</City>
+<Country>India</Country>
+</Addresses>
+<Addresses>
+<City>Mumbai</City>
+<Country>India</Country>
+</Addresses>
+</Customer>
