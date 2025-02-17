@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35506.116 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmldeserializeLib", "XmldeserializeLib\XmldeserializeLib.csproj", "{6A850A4E-2319-4379-A4C9-844CA7D2AABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmldeserializeConsoleApp", "XmldeserializeConsoleApp\XmldeserializeConsoleApp.csproj", "{92436EC9-3162-4C2B-96A5-ED9743A8CAF8}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A850A4E-2319-4379-A4C9-844CA7D2AABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A850A4E-2319-4379-A4C9-844CA7D2AABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A850A4E-2319-4379-A4C9-844CA7D2AABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A850A4E-2319-4379-A4C9-844CA7D2AABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92436EC9-3162-4C2B-96A5-ED9743A8CAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92436EC9-3162-4C2B-96A5-ED9743A8CAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92436EC9-3162-4C2B-96A5-ED9743A8CAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92436EC9-3162-4C2B-96A5-ED9743A8CAF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
