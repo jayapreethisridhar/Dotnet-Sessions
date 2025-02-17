@@ -1,21 +1,25 @@
-﻿using System;
-using System.Reflection.Metadata.Ecma335;
-class Program
+﻿
+using System;
+class PrintNameRecursively
 {
-    static void Main()
+    static void Main() //main Function
     {
-        PrintName("Preethi",1);
-        
+        //PrintName(1); //Function call with argument by increement
+        PrintName(10); //Function call with argument by decreement
     }
-    static void PrintName(string userName, int number)
+    static void PrintName(int number) //Print function
     {
-        if (number <= 10)
-        {
-            Console.WriteLine(userName, number);
-            number++;
-            PrintName(userName, number);
-        }
+        //if(number <= 10) //condition to break the function
+        //{
 
-       // Console.WriteLine(userName, number);
+        //    Console.WriteLine($"Hi! I am Venkatesh | {number}");
+        //    number++;
+        //    PrintName(number);// (function called itself is called Recursive)
+        //}
+
+        if (number == 0)
+            return;
+        Console.WriteLine($"Hi! I am Preethi | {number}");
+        PrintName(number - 1);
     }
 }
