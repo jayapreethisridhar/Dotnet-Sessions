@@ -3,30 +3,20 @@ class Function
 {
     static void Main()
     {
-        //PrintNames("Jayapreethi", 10);
+        PrintName("Jayapreethi", 5);
         bool result1 = CheckISEvenNoV2(10);
-        CheckISEvenNoV1(15);
-        string resultOutsideFunction = CheckISEvenNoV3(10);
-        //PrintTodayDate();
-        string[] names = GetAllRrdFolksNames();
-        foreach (string name in names)
+        Console.WriteLine($"CheckISEvenNoV1 result is {result1}");
+        Console.WriteLine(CheckISEvenNoV1(13));
+        Console.WriteLine(CheckISEvenNoV3(10));
+        //Console.WriteLine(PrintName("Jaya",10));
+
+        PrintTodayDate();
+
+        string[] rrdFolks = GetAllRrdFolksNames();
+        foreach (string name in rrdFolks)
         {
             Console.WriteLine(name);
         }
-        Console.WriteLine(resultOutsideFunction);
-        //Console.WriteLine($"CheckISEvenNoV1 result is {result1}");
-        Console.WriteLine(CheckISEvenNoV3(13));
-        Console.WriteLine(CheckISEvenNoV2(10));
-        Console.WriteLine($"The name is even: {result1}");
-        //Console.WriteLine(PrintName("Jaya",10));
-    }
-        //PrintTodayDate();
-
-        //string[] rrdFolks = GetAllRrdFolksNames();
-        //foreach (string name in rrdFolks)
-        //{
-        //    Console.WriteLine(name);
-        //}
 
     }
     static string[] GetAllRrdFolksNames()
@@ -42,18 +32,10 @@ class Function
         return folks;
     }
     static void PrintTodayDate()
-     {
-        Console.WriteLine(DateTime.UtcNow);
+    {
         Console.WriteLine(DateTime.Now.ToString("HH.mm"));
     }
-    static void PrintName(string userName, int iterations)
-    {
-        for (int i = 1; i <= iterations; i++)
-        {
-            Console.WriteLine($"Hello {userName.ToUpper()}! {iteration}");
-        }
-    }
-static void CheckISEvenNoV1(int number)
+    static bool CheckISEvenNoV1(int number)
     {
         if (number % 2 == 0)//modulus operator
         {
@@ -69,5 +51,12 @@ static void CheckISEvenNoV1(int number)
     {
         return (number % 2 == 0 ? "Its an even" : "Its an odd");
     }
-   
+    static void PrintName(string userName, int iterations)
+    {
+        for (int iteration = 1; iteration > iterations; iteration++)
+        {
+            Console.WriteLine($"Hello {userName.ToUpper()}! {iteration}");
+        }
+    }
+
 }

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Validator</title>
+</head>
+<body>
+    <a href="../../index.html"> 
+        <img src="../../images/back.jpg" alt="Back" width="50" height="50"> 
+    </a>
+    <h1>Name Validator in JavaScript</h1>
+    <input type="text" id="name" placeholder="Enter your Name"><button id="validate" class="style" onclick="NameValidate()">Validate</button><button id="reset" class="style" onclick="resetText()">Reset</button>
+    <h2 id="Display"></h2>
+<script>
+    function resetText()
+    {
+        document.getElementById("name").value = "";
+        document.getElementById("Display").innerHTML=""
+        document.getElementById("name").style.backgroundColor="white";
+    }
+   function NameValidate()
+    {
+    var name = document.getElementById("name").value;
+    var display = document.getElementById("Display");
+    var namePattern = /^[A-Za-z]+$/;
+    if (namePattern.test(name))
+    {
+        display.innerHTML = "The Given Name is in correct format Hi " + name + "! Welcome";
+        document.getElementById("name").style.backgroundColor="green";
+    }
+    //console.log(name);
+    else
+    {
+    display.innerHTML="The Name should be in Alphabet only don't use numbers, special characters and blank";
+    document.getElementById("name").style.backgroundColor="red";
+    }
+    }
+</script>
+</body>
+</html>

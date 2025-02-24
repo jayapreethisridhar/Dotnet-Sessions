@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Validator</title>
+</head>
+<body>
+    <a href="../../index.html"> 
+        <img src="../../images/back.jpg" alt="Back" width="50" height="50"> 
+    </a>
+    <h1>Name Validator in JavaScript</h1>
+    <form>
+        <p><strong>Enter Your Name </strong></p>
+        <input type="text" id="name" onmouseenter="myOnfocusevent()" onmouseleave="myOnblurevent()">
+        <h2 id ="Display"></h2>
+    </form>
+
+<script>
+    function myOnblurevent()
+    {
+    var name = document.getElementById("name").value;
+    var display = document.getElementById("Display");
+    var namePattern = /^[A-Za-z]+$/;
+    if (namePattern.test(name))
+    {
+        display.innerHTML = "The Given Name is in correct format Hi " + name + "! Welcome";
+        document.getElementById("name").style.backgroundColor="green";
+    }
+    //console.log(name);
+    else
+    {
+    display.innerHTML="The Name should be in Alphabet only don't use numbers, special characters and blank";
+    document.getElementById("name").style.backgroundColor="red";
+    }
+    }
+    function myOnfocusevent()
+    {
+
+        document.getElementById("name").value="";
+        document.getElementById("name").style.backgroundColor="white";
+        document.getElementById("Display").innerHTML ="";
+        
+        }
+</script>
+
+</body>
+</html>
