@@ -13,7 +13,7 @@ namespace StreamReadWrite
         }
         private static void ReadTheHtmlFile()
         {
-            var fs = new FileStream("C:\\temp\\welcome.html", FileMode.Open);
+            var fs = new FileStream("C:\\Jayapreethi-html-app\\sample.txt", FileMode.Open);
             var sr = new StreamReader(fs);
              var html = sr.ReadToEnd();
              Console.WriteLine(html);

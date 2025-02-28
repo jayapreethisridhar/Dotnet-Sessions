@@ -4,29 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenericDictionaryApp.Models
+namespace GnericDictionaryApp.Models
 {
     internal class Customer
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public string Id { get; set; }
+
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Id,Name);
+            return HashCode.Combine(Id, Name);
         }
+
         public override bool Equals(object other)
         {
             Customer second = (Customer)other;
             if (this.Id == second.Id && this.Name == second.Name)
-            { 
+            {
                 return true;
             }
-                return false;
+            return false;
         }
         public override string ToString()
         {
-            return $"id is {this.Id} name is {this.Name}";
+            return $"id is  {this.Id} , name is {this.Name}";
         }
     }
+
 }
