@@ -1,0 +1,61 @@
+using Microsoft.AspNetCore.Http;
+using System;
+using System.Threading.Tasks;
+
+public class LoggingMiddleware
+{
+    private readonly RequestDelegate _next;
+
+    public LoggingMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // Log the details of the incoming request
+        var currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        var requestedResource = context.Request.Path;
+        var userAgent = context.Request.Headers["User-Agent"].ToString();
+        var clientIp = context.Connection.RemoteIpAddress?.ToString();
+
+        Console.WriteLine($"[{currentTime}] - Resource: {requestedResource} - User-Agent: {userAgent} - Client IP: {clientIp}");
+
+        // Short-circuit the middleware pipeline based on a condition (e.g., block access to a certain resource)
+        if (requestedResource.Equals("/restricted", StringComparison.OrdinalIgnoreCase))
+        {
+            // Short-circuiting: send a forbidden response and do not call next middleware
+            context.Response.StatusCode = StatusCodes.Status403Forbidden;
+            await context.Response.WriteAsync("Access to this resource is forbidden.");
+            return; // Exit the middleware pipeline here
+        }
+
+        // Call the next middleware in the pipeline if no short-circuit occurred
+        await _next(context);
+    }
+}
+
+// Register the middleware in Startup.cs or Program.cs
+public class Startup
+{
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        app.UseMiddleware<LoggingMiddleware>(); // Use the logging middleware
+
+        app.UseRouting();
+
+        // Example of a route that will be intercepted by the LoggingMiddleware
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapGet("/restricted", async context =>
+            {
+                await context.Response.WriteAsync("This is a restricted resource!");
+            });
+
+            endpoints.MapGet("/open", async context =>
+            {
+                await context.Response.WriteAsync("This is an open resource!");
+            });
+        });
+    }
+}

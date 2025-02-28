@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.ChildTitle</title>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link href="~\lib\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet" />
+    <!-- <script src="c:\users\rr265571\documents\personal\dotnet_training\repository\markonda_dotnet_sessions\day53\masterapplication\masterapplication\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js"></script> -->
+
+</head>
+<body>
+    <h1>Welcome to the Banking Application</h1>
+    <nav>
+        @Html.ActionLink("Home", "Index", "Home") |
+
+        @Html.ActionLink("AboutUS", "Index", "About") |
+
+        @Html.ActionLink("ContractUS", "Index", "Contact") |
+
+        @Html.ActionLink("Login", "Index", "Login") |
+
+        @Html.ActionLink("Registration", "Index", "Registration")
+
+        
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer>
+        <p>&Copy;  @DateTime.Now.Year</p>
+    </footer>
+</body>
+</html>
