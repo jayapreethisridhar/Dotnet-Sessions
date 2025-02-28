@@ -20,7 +20,7 @@ namespace AccountLapprogram.Models
         {
             foreach (AccountObject account in accounts)
             {
-                Console.WriteLine(account.accountNumber);
+                Console.WriteLine(account.AccountNumber);
                 Console.WriteLine(account.Name);
                 Console.WriteLine(account.Email);
                 Console.WriteLine(account.Balance);
